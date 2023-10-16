@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+  }
+  h2 {
+    text-align: center;
+    color: gray;
+  }
+  .checkBox {
+    width: 30px;
+    height: 30px;
+  }
+  .checkBox:hover {
+    background-color: red;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 180px 30px 180px;
+  }
+  .table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th {
+    padding: 12px;
+    text-align: center;
+    font-size: 15px;
+  }
+  .table td {
+    border-bottom: 1px solid black;
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .table-head {
+    background-color: grey;
+  }
+  
+  @media (max-width: 505px) {
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .table {
+      max-width: 100%;
+      width: 100%;
+    }
+    .table th,
+    .table td {
+      padding: 5px;
+      font-size: 10px;
+    }
+  }
+  
+  span {
+    padding: 5px;
+  }
+  
+  .AllcheckBox {
+    width: 20px;
+    height: 20px;
+  }
+  .actions {
+    cursor: default;
+  }
+  #edit:hover {
+    color: blue;
+    transition: 0.3s;
+  }
+  .edit-input {
+    border: 1px solid black;
+    padding: 3px;
+  }
+  @media (max-width: 731px) {
+    .edit-input {
+      width: 60px;
+    }
+  }
+  #delete:hover {
+    color: red;
+    transition: 0.3s;
+  }
+  
+  .checked {
+    background-color: gray;
+    opacity: 0.7;
+  }
+  
+  .editData {
+    border-radius: 15px;
+    padding: 3px;
+    margin: 2px;
+    background-color: #fff4e0;
+  }
+  
+  #save:hover {
+    color: blue;
+    transition: 0.2s;
+  }
+  #unsave:hover {
+    color: yellow;
+    transition: 0.2s;
+  }
+  

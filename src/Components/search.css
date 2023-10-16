@@ -1,0 +1,13 @@
+.searching {
+    padding: 10px;
+    width: 25vw;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 16px;
+    cursor: pointer;
+  }
+  .searching:focus {
+    border: 3px solid green;
+    outline: none;
+    background-color: beige;
+  }

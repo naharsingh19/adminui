@@ -1,6 +1,6 @@
 import React from "react";
 import "./deleteRows.css";
-export default function DeleteButton({ handleDeleteSelected, rowsSelected }) {
+export default function DeleteSelected({ handleDeleteSelected, rowsSelected }) {
   return (
     <div>
       <button

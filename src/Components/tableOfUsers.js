@@ -1,12 +1,11 @@
 import "./tableOfUsers.css";
-import SearchBox from "./search";
+import Search from "./search";
 import DeleteSelected from "./deleteRows";
 import Pagination from "./pagination";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function TableData() {
-    
+export default function Data() {
   const [usersdata, setUsersdata] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [searchData, setSearchData] = useState("");
@@ -35,8 +34,8 @@ export default function TableData() {
       const requiredData = response.data;
       setUsersdata(requiredData);
       setFilteredUsers(requiredData);
-    } catch (error) {
-      console.error("Unable to fetch required data", error);
+    } catch{
+      alert("error while fetching data...");
     }
   };
   useEffect(() => {
@@ -65,7 +64,7 @@ export default function TableData() {
     );
     const updatedPageRows = currentPageRows.map((user) => ({
       ...user,
-      isChecked: !pageAllChecked
+      isChecked: !pageAllChecked,
     }));
 
     setFilteredUsers((prev) => {
@@ -93,7 +92,7 @@ export default function TableData() {
       if (user.id === userId) {
         return {
           ...user,
-          isChecked: !user.isChecked
+          isChecked: !user.isChecked,
         };
       }
       return user;
@@ -114,7 +113,7 @@ export default function TableData() {
     setEditedUserData({
       name: userToEdit.name,
       email: userToEdit.email,
-      role: userToEdit.role
+      role: userToEdit.role,
     });
   };
 
@@ -125,7 +124,7 @@ export default function TableData() {
           ...user,
           name: editedUserData.name,
           email: editedUserData.email,
-          role: editedUserData.role
+          role: editedUserData.role,
         };
       }
       return user;
@@ -173,8 +172,8 @@ export default function TableData() {
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
         />
       }
-      <h2>ADMIN UI</h2>
-      <SearchBox searchData={searchData} handleSearching={handleSearching} />
+      <h2>ADMIN</h2>
+      <Search searchData={searchData} handleSearching={handleSearching} />
       <div className="container">
         <table className="table">
           <thead>
@@ -190,7 +189,7 @@ export default function TableData() {
               <th>Name</th>
               <th>Email</th>
               <th>Role</th>
-              <th>Actions</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody className="table-body">
@@ -216,7 +215,7 @@ export default function TableData() {
                       onChange={(e) =>
                         setEditedUserData({
                           ...editedUserData,
-                          name: e.target.value
+                          name: e.target.value,
                         })
                       }
                     />
@@ -233,7 +232,7 @@ export default function TableData() {
                       onChange={(e) =>
                         setEditedUserData({
                           ...editedUserData,
-                          email: e.target.value
+                          email: e.target.value,
                         })
                       }
                     />
@@ -250,7 +249,7 @@ export default function TableData() {
                       onChange={(e) =>
                         setEditedUserData({
                           ...editedUserData,
-                          role: e.target.value
+                          role: e.target.value,
                         })
                       }
                     />
@@ -282,6 +281,7 @@ export default function TableData() {
                     <>
                       <span
                         className="material-symbols-outlined"
+                        title="Edit"
                         id="edit"
                         onClick={() => handleEdit(user.id)}
                       >
@@ -289,7 +289,7 @@ export default function TableData() {
                       </span>
                       <span
                         className="material-symbols-outlined"
-                        title="Delete Data"
+                        title="Delete"
                         id="delete"
                         onClick={() => handleDelete(user.id)}
                       >

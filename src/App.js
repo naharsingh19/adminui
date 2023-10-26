@@ -1,9 +1,9 @@
 import "./index.css";
-import TableData from "./Components/tableOfUsers";
+import Data from "./Components/tableOfUsers";
 export default function App() {
   return (
     <div className="App">
-      <TableData />
+      <Data />
     </div>
   );
 }

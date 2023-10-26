@@ -1,6 +1,6 @@
 import React from "react";
 import "./search.css";
-export default function SearchBox({ searchData, handleSearching }) {
+export default function Search({ searchData, handleSearching }) {
   return (
     <div>
       <input
@@ -8,7 +8,7 @@ export default function SearchBox({ searchData, handleSearching }) {
         className="searching"
         value={searchData}
         onChange={handleSearching}
-        placeholder="Search the required row data..."
+        placeholder="Search the required data.."
       />
     </div>
   );
